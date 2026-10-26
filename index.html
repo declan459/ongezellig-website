@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5ebdc;
+            color: #59351c;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: stretch;
+            width: 100%;
+            min-height: 58px;
+            background: #cf690d;
+            border-bottom: 3px solid #9d4906;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            padding: 0 28px;
+            background: #b95709;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            text-decoration: none;
+            white-space: nowrap;
+            border-right: 1px solid #a54d06;
+        }
+
+        .navbar-links {
+            display: flex;
+            flex: 1;
+            align-items: stretch;
+            min-width: 0;
+            overflow-x: auto;
+        }
+
+        .navbar-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 22px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            border-right: 1px solid #bd5a09;
+        }
+
+        .navbar-links a:hover {
+            background: #f7a54c;
+            color: #482200;
+        }
+
+        .navbar-links a.active {
+            background: #b75a0a;
+            border-bottom: 3px solid #fff;
+            padding-top: 3px;
+        }
+
+        .navbar-links a.active:hover {
+            background: #f7a54c;
+            color: #482200;
+        }
+
+        .navbar-links a:last-child {
+            margin-left: auto;
+            border-left: 1px solid #bd5a09;
+        }
+
+        .navbar-links a:focus-visible,
+        .navbar-logo:focus-visible {
+            outline: 2px solid white;
+            outline-offset: -5px;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 35px 25px;
+        }
+
+        h1 {
+            color: #59351c;
+            font-size: 26px;
+            margin-top: 0;
+        }
+
+        h2 {
+            color: #59351c;
+            font-size: 20px;
+        }
+
+        p {
+            color: #795d46;
+            line-height: 1.6;
+        }
+
+        .content-box {
+            background: #fffaf3;
+            border: 1px solid #e1ceb6;
+            padding: 22px;
+            margin-top: 25px;
+        }
+
+        .content-box h2 {
+            margin-top: 0;
+        }
+
+        .content-box p {
+            margin-bottom: 0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 11px 20px;
+            background: #cf690d;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            border: 1px solid #9d4906;
+        }
+
+        .button:hover {
+            background: #f7a54c;
+            color: #482200;
+        }
+
+        footer {
+            max-width: 1200px;
+            margin: 35px auto 0;
+            padding: 20px 25px;
+            border-top: 1px solid #d9c3a9;
+            font-size: 13px;
+            color: #795d46;
+        }
+
+        @media (max-width: 650px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .navbar-logo {
+                min-height: 55px;
+                padding: 0 20px;
+            }
+
+            .navbar-links a {
+                min-height: 46px;
+                padding: 0 17px;
+            }
+
+            .navbar-links a:last-child {
+                margin-left: 0;
+            }
+
+            main {
+                padding: 25px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="navbar-logo">
+            Ongezellig
+        </a>
+
+        <nav class="navbar-links" aria-label="Main navigation">
+            <a href="index.html" class="active" aria-current="page">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Read</a>
+			<a href="watch.html">Watch</a>
+            <a href="blog.html">Blog</a>
+            <a href="downloads.html">Downloads</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Welcome to ongezellig.site</h1>
+        <p>Welcome to the best Ongezellig based website on the internet. We host the English subtitles for the Dutch webseries <a href="https://www.youtube.com/watch?v=qJ9TVfHGRuY&t=19s">Ongezellig</a>. Along with a bunch of the comics and extras that Studio Massa has tried to petje.af from us english fans</p>
+
+        <section class="content-box">
+            <h2>About This Website</h2>
+            <p>This is my personal corner of the internet. Feel free to explore the different pages using the navigation bar above.</p>
+        </section>
+
+        <section class="content-box">
+            <h2>Latest Blog Posts</h2>
+            <p>Check out my blog for the latest news, updates, and posts.</p>
+            <p>
+                <a href="blog.html" class="button">Visit My Blog</a>
+            </p>
+        </section>
+
+        <section class="content-box">
+            <h2>Download The Subtitles</h2>
+            <p>Visit the downlaods page to get the ongezellig english subtitles (Written By Hand)</p>
+            <p>
+                <a href="downloads.html" class="button">Open The Downloads Page</a>
+            </p>
+        </section>
+		
+		<section class="content-box">
+            <h2>Read the comics</h2>
+            <p>We also have the comics on here! for free</p>
+            <p>
+                <a href="downloads.html" class="button">Begin Reading</a>
+            </p>
+        </section>
+		
+    </main>
+
+
+
+</body>
+</html>
