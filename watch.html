@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch | ongezellig.site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="navbar-logo">Ongezellig</a>
+        <nav class="navbar-links" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+<a href="comics.html">Read</a>
+<a href="watch.html" class="active" aria-current="page">Watch</a>
+<a href="blog.html">Blog</a>
+<a href="downloads.html">Downloads</a>
+<a href="contact.html" class="contact-link">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1 class="page-heading">Watch Ongezellig</h1>
+        <div class="selection" role="group" aria-label="Video version">
+            <button type="button" id="subbed-btn" class="selected" aria-pressed="true">Subbed (English) [N/A YET]</button>
+            <button type="button" id="dutch-btn" aria-pressed="false">Dutch</button>
+        </div>
+        <section class="content-box"><h2 id="watch-title">Ongezellig — Subbed (English)</h2><video id="video" class="player" controls preload="metadata" playsinline><source src="assets/watch/ongezellig-dutch.mp4" type="video/mp4"><track id="subtitle-track" kind="subtitles" src="subtitles/ongezellig-en.vtt" srclang="en" label="English" default>Your browser does not support HTML5 video.</video><p id="video-description" class="muted">Original Dutch audio with English subtitles.</p></section>
+    </main>
+    <footer>ongezellig.site · Unofficial fan project · Not affiliated with Studio Massa. All original Ongezellig characters and media belong to their respective creators.</footer>
+    <script src="watch.js"></script>
+</body>
+</html>
