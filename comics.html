@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,38 +8,350 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Read Comics | ongezellig.site</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Comic language buttons and mirror dropdowns */
+        .comic-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .mirror-group {
+            display: inline-flex;
+            position: relative;
+            align-items: stretch;
+        }
+
+        .mirror-group > .button {
+            border-radius: 6px 0 0 6px;
+            margin: 0;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .mirror-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 12px;
+            border: none;
+            border-left: 1px solid rgba(255,255,255,0.25);
+            border-radius: 0 6px 6px 0;
+            background: #a83232;
+            color: white;
+            cursor: pointer;
+            font-size: 13px;
+            transition: background 0.2s;
+        }
+
+        .mirror-group:has(.secondary) .mirror-toggle {
+            background: #555;
+        }
+
+        .mirror-toggle:hover {
+            background: #792525 !important;
+        }
+
+        .mirror-toggle[aria-expanded="true"] {
+            background: #792525 !important;
+        }
+
+        .mirror-menu {
+            display: none;
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            min-width: 185px;
+            background: #242424;
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 6px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            z-index: 100;
+        }
+
+        .mirror-menu.open {
+            display: block;
+        }
+
+        .mirror-menu-title {
+            color: #aaa;
+            font-size: 11px;
+            padding: 7px 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .mirror-menu a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background 0.15s;
+        }
+
+        .mirror-menu a:hover,
+        .mirror-menu a:focus-visible {
+            background: #383838;
+        }
+
+        .mirror-icon {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .mirror-menu a span {
+            flex: 1;
+        }
+
+        .mirror-external {
+            opacity: 0.6;
+            font-size: 12px;
+        }
+    </style>
 </head>
+
 <body>
     <header class="navbar">
         <a href="index.html" class="navbar-logo">Ongezellig</a>
         <nav class="navbar-links" aria-label="Main navigation">
             <a href="index.html">Home</a>
-<a href="comics.html" class="active" aria-current="page">Read</a>
-<a href="watch.html">Watch</a>
-<a href="blog.html">Blog</a>
-<a href="downloads.html">Downloads</a>
+            <a href="comics.html" class="active" aria-current="page">Read</a>
+            <a href="watch.html">Watch</a>
+            <a href="blog.html">Blog</a>
+            <a href="downloads.html">Downloads</a>
             <a href="https://art.ongezellig.site">Fan/Massa Artwork</a>
-
-<a href="contact.html" class="contact-link">Contact</a>
+            <a href="contact.html" class="contact-link">Contact</a>
         </nav>
     </header>
+
     <main>
         <h1 class="page-heading">Read the comics</h1>
         <p>Choose a comic and select the language you want to read it in.</p>
+
         <div class="grid">
+
+            <!-- MAYA'S SWEET 16 -->
             <article class="item">
-                <img class="cover" src="assets/sweet16.webp" alt="Maya's Sweet 16">
+                <img class="cover"
+                     src="assets/sweet16.webp"
+                     alt="Maya's Sweet 16">
+
                 <h2>Maya's Sweet 16</h2>
-                <div class="action-row"><a class="button" href="assets/comics/mayas-sweet-16.pdf">Read (EN)</a><a class="button secondary" href="assets/comics/mayas-sweet-16-nl.pdf">Read (NL)</a></div>
+
+                <div class="comic-actions">
+
+                    <!-- ENGLISH -->
+                    <div class="mirror-group">
+                        <a class="button"
+                           href="assets/comics/mayas-sweet-16.pdf">
+                            Read (EN)
+                        </a>
+
+                        <button class="mirror-toggle"
+                                type="button"
+                                aria-label="English mirrors"
+                                aria-expanded="false"
+                                aria-haspopup="true">▼</button>
+
+                        <div class="mirror-menu">
+                            <div class="mirror-menu-title">English Mirrors</div>
+
+                            <a href="YOUR_EN_MIRROR_1_URL">
+                                <img class="mirror-icon"
+                                     src="assets/mirrors/mirror1.png"
+                                     alt="">
+                                <span>Mirror 1</span>
+                                <span class="mirror-external">↗</span>
+                            </a>
+
+                            <a href="YOUR_EN_MIRROR_2_URL">
+                                <img class="mirror-icon"
+                                     src="assets/mirrors/mirror2.png"
+                                     alt="">
+                                <span>Mirror 2</span>
+                                <span class="mirror-external">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- DUTCH -->
+                    <div class="mirror-group">
+                        <a class="button secondary"
+                           href="assets/comics/mayas-sweet-16-nl.pdf">
+                            Read (NL)
+                        </a>
+
+                        <button class="mirror-toggle"
+                                type="button"
+                                aria-label="Dutch mirrors"
+                                aria-expanded="false"
+                                aria-haspopup="true">▼</button>
+
+                        <div class="mirror-menu">
+                            <div class="mirror-menu-title">Dutch Mirrors</div>
+
+                            <a href="YOUR_NL_MIRROR_1_URL">
+                                <img class="mirror-icon"
+                                     src="assets/mirrors/mirror1.png"
+                                     alt="">
+                                <span>Mirror 1</span>
+                                <span class="mirror-external">↗</span>
+                            </a>
+
+                            <a href="YOUR_NL_MIRROR_2_URL">
+                                <img class="mirror-icon"
+                                     src="assets/mirrors/mirror2.png"
+                                     alt="">
+                                <span>Mirror 2</span>
+                                <span class="mirror-external">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
             </article>
+
+            <!-- MAYA'S CONVERSATIE -->
             <article class="item">
-                <img class="cover" src="assets/conversatie.png" alt="Maya's Conversatie">
+                <img class="cover"
+                     src="assets/conversatie.png"
+                     alt="Maya's Conversatie">
+
                 <h2>Maya's Conversatie</h2>
-                <div class="action-row"><a class="button" href="https://files.catbox.moe/klc17d.pdf">Read (EN)</a><a class="button secondary" href="https://files.catbox.moe/dhr397.pdf">Read (NL)</a></div>
+
+                <div class="comic-actions">
+
+                    <!-- ENGLISH -->
+                    <div class="mirror-group">
+                        <a class="button"
+                           href="https://files.catbox.moe/klc17d.pdf">
+                            Read (EN)
+                        </a>
+
+                        <button class="mirror-toggle"
+                                type="button"
+                                aria-label="English mirrors"
+                                aria-expanded="false"
+                                aria-haspopup="true">▼</button>
+
+                        <div class="mirror-menu">
+                            <div class="mirror-menu-title">English Mirrors</div>
+
+                            <a href="YOUR_CONVERSATIE_EN_MIRROR_1_URL">
+                                <img class="mirror-icon"
+                                     src="assets/mirrors/mirror1.png"
+                                     alt="">
+                                <span>Mirror 1</span>
+                                <span class="mirror-external">↗</span>
+                            </a>
+
+                            <a href="YOUR_CONVERSATIE_EN_MIRROR_2_URL">
+                                <img class="mirror-icon"
+                                     src="assets/mirrors/mirror2.png"
+                                     alt="">
+                                <span>Mirror 2</span>
+                                <span class="mirror-external">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- DUTCH -->
+                    <div class="mirror-group">
+                        <a class="button secondary"
+                           href="https://files.catbox.moe/dhr397.pdf">
+                            Read (NL)
+                        </a>
+
+                        <button class="mirror-toggle"
+                                type="button"
+                                aria-label="Dutch mirrors"
+                                aria-expanded="false"
+                                aria-haspopup="true">▼</button>
+
+                        <div class="mirror-menu">
+                            <div class="mirror-menu-title">Dutch Mirrors</div>
+
+                            <a href="YOUR_CONVERSATIE_NL_MIRROR_1_URL">
+                                <img class="mirror-icon"
+                                     src="assets/mirrors/mirror1.png"
+                                     alt="">
+                                <span>Mirror 1</span>
+                                <span class="mirror-external">↗</span>
+                            </a>
+
+                            <a href="YOUR_CONVERSATIE_NL_MIRROR_2_URL">
+                                <img class="mirror-icon"
+                                     src="assets/mirrors/mirror2.png"
+                                     alt="">
+                                <span>Mirror 2</span>
+                                <span class="mirror-external">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
             </article>
+
         </div>
     </main>
-    <footer>ongezellig.site · Unofficial fan project · Not affiliated with Studio Massa. All original Ongezellig characters and media belong to their respective creators.</footer>
 
+    <footer>
+        ongezellig.site · Unofficial fan project ·
+        Not affiliated with Studio Massa.
+        All original Ongezellig characters and media
+        belong to their respective creators.
+    </footer>
+
+    <script>
+        const toggles = document.querySelectorAll(".mirror-toggle");
+
+        function closeMenus() {
+            document.querySelectorAll(".mirror-menu").forEach(menu => {
+                menu.classList.remove("open");
+            });
+
+            toggles.forEach(button => {
+                button.setAttribute("aria-expanded", "false");
+            });
+        }
+
+        toggles.forEach(button => {
+            button.addEventListener("click", event => {
+                event.stopPropagation();
+
+                const menu = button.nextElementSibling;
+                const wasOpen = menu.classList.contains("open");
+
+                closeMenus();
+
+                if (!wasOpen) {
+                    menu.classList.add("open");
+                    button.setAttribute("aria-expanded", "true");
+                }
+            });
+        });
+
+        document.addEventListener("click", event => {
+            if (!event.target.closest(".mirror-group")) {
+                closeMenus();
+            }
+        });
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape") {
+                closeMenus();
+            }
+        });
+    </script>
 </body>
 </html>
