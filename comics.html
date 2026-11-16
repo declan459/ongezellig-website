@@ -4,13 +4,16 @@
 <head>
     <script data-goatcounter="https://declan.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>Read Comics | ongezellig.site</title>
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* Comic language buttons and mirror dropdowns */
+        /* Comic language buttons */
         .comic-actions {
             display: flex;
             flex-wrap: wrap;
@@ -30,6 +33,7 @@
             display: inline-flex;
             align-items: center;
             text-decoration: none;
+            white-space: nowrap;
         }
 
         .mirror-toggle {
@@ -51,20 +55,23 @@
             background: #555;
         }
 
-        .mirror-toggle:hover {
-            background: #792525 !important;
-        }
-
+        .mirror-toggle:hover,
         .mirror-toggle[aria-expanded="true"] {
             background: #792525 !important;
         }
 
+        /* Wider dropdown menus */
         .mirror-menu {
             display: none;
             position: absolute;
             top: calc(100% + 6px);
             left: 0;
-            min-width: 185px;
+
+            min-width: 260px;
+            width: max-content;
+            max-width: calc(100vw - 32px);
+
+            box-sizing: border-box;
             background: #242424;
             border: 1px solid #444;
             border-radius: 8px;
@@ -83,6 +90,7 @@
             padding: 7px 10px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            white-space: nowrap;
         }
 
         .mirror-menu a {
@@ -94,6 +102,7 @@
             text-decoration: none;
             border-radius: 5px;
             font-size: 14px;
+            white-space: nowrap;
             transition: background 0.15s;
         }
 
@@ -110,33 +119,63 @@
         }
 
         .mirror-menu a span {
+            white-space: nowrap;
+        }
+
+        .mirror-menu a span:not(.mirror-external) {
             flex: 1;
+            min-width: 0;
         }
 
         .mirror-external {
             opacity: 0.6;
             font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        /* Keep menus inside smaller screens */
+        @media (max-width: 600px) {
+            .mirror-menu {
+                min-width: 220px;
+            }
+
+            .mirror-group:last-child .mirror-menu {
+                left: auto;
+                right: 0;
+            }
         }
     </style>
 </head>
 
 <body>
     <header class="navbar">
-        <a href="index.html" class="navbar-logo">Ongezellig</a>
-        <nav class="navbar-links" aria-label="Main navigation">
+        <a href="index.html" class="navbar-logo">
+            Ongezellig
+        </a>
+
+        <nav class="navbar-links"
+             aria-label="Main navigation">
             <a href="index.html">Home</a>
-            <a href="comics.html" class="active" aria-current="page">Read</a>
+            <a href="comics.html"
+               class="active"
+               aria-current="page">Read</a>
             <a href="watch.html">Watch</a>
             <a href="blog.html">Blog</a>
             <a href="downloads.html">Downloads</a>
-            <a href="https://art.ongezellig.site">Fan/Massa Artwork</a>
-            <a href="contact.html" class="contact-link">Contact</a>
+            <a href="https://art.ongezellig.site">
+                Fan/Massa Artwork
+            </a>
+            <a href="contact.html"
+               class="contact-link">Contact</a>
         </nav>
     </header>
 
     <main>
         <h1 class="page-heading">Read the comics</h1>
-        <p>Choose a comic and select the language you want to read it in.</p>
+        <p>
+            Choose a comic and select the language
+            you want to read it in.
+        </p>
 
         <div class="grid">
 
@@ -161,16 +200,20 @@
                                 type="button"
                                 aria-label="English mirrors"
                                 aria-expanded="false"
-                                aria-haspopup="true">▼</button>
+                                aria-haspopup="true">
+                            ▼
+                        </button>
 
                         <div class="mirror-menu">
-                            <div class="mirror-menu-title">English Mirrors</div>
+                            <div class="mirror-menu-title">
+                                English Mirrors
+                            </div>
 
                             <a href="assets/comics/mayas-sweet-16.pdf">
                                 <img class="mirror-icon"
                                      src="assets/mirrors/mirror1.webp"
                                      alt="">
-                                <span>Offical</span>
+                                <span>Official</span>
                                 <span class="mirror-external">↗</span>
                             </a>
 
@@ -195,10 +238,14 @@
                                 type="button"
                                 aria-label="Dutch mirrors"
                                 aria-expanded="false"
-                                aria-haspopup="true">▼</button>
+                                aria-haspopup="true">
+                            ▼
+                        </button>
 
                         <div class="mirror-menu">
-                            <div class="mirror-menu-title">Dutch Mirrors</div>
+                            <div class="mirror-menu-title">
+                                Dutch Mirrors
+                            </div>
 
                             <a href="assets/comics/mayas-sweet-16-nl.pdf">
                                 <img class="mirror-icon"
@@ -242,10 +289,14 @@
                                 type="button"
                                 aria-label="English mirrors"
                                 aria-expanded="false"
-                                aria-haspopup="true">▼</button>
+                                aria-haspopup="true">
+                            ▼
+                        </button>
 
                         <div class="mirror-menu">
-                            <div class="mirror-menu-title">English Mirrors</div>
+                            <div class="mirror-menu-title">
+                                English Mirrors
+                            </div>
 
                             <a href="https://files.catbox.moe/klc17d.pdf">
                                 <img class="mirror-icon"
@@ -276,10 +327,14 @@
                                 type="button"
                                 aria-label="Dutch mirrors"
                                 aria-expanded="false"
-                                aria-haspopup="true">▼</button>
+                                aria-haspopup="true">
+                            ▼
+                        </button>
 
                         <div class="mirror-menu">
-                            <div class="mirror-menu-title">Dutch Mirrors</div>
+                            <div class="mirror-menu-title">
+                                Dutch Mirrors
+                            </div>
 
                             <a href="https://files.catbox.moe/dhr397.pdf">
                                 <img class="mirror-icon"
@@ -313,15 +368,19 @@
     </footer>
 
     <script>
-        const toggles = document.querySelectorAll(".mirror-toggle");
+        const toggles =
+            document.querySelectorAll(".mirror-toggle");
 
         function closeMenus() {
-            document.querySelectorAll(".mirror-menu").forEach(menu => {
-                menu.classList.remove("open");
-            });
+            document.querySelectorAll(".mirror-menu")
+                .forEach(menu => {
+                    menu.classList.remove("open");
+                });
 
             toggles.forEach(button => {
-                button.setAttribute("aria-expanded", "false");
+                button.setAttribute(
+                    "aria-expanded", "false"
+                );
             });
         }
 
@@ -330,13 +389,28 @@
                 event.stopPropagation();
 
                 const menu = button.nextElementSibling;
-                const wasOpen = menu.classList.contains("open");
+                const wasOpen =
+                    menu.classList.contains("open");
 
                 closeMenus();
 
                 if (!wasOpen) {
                     menu.classList.add("open");
-                    button.setAttribute("aria-expanded", "true");
+                    button.setAttribute(
+                        "aria-expanded", "true"
+                    );
+
+                    // Prevent dropdown overflowing viewport
+                    const rect =
+                        menu.getBoundingClientRect();
+
+                    if (rect.right > window.innerWidth - 10) {
+                        menu.style.left = "auto";
+                        menu.style.right = "0";
+                    } else {
+                        menu.style.left = "0";
+                        menu.style.right = "auto";
+                    }
                 }
             });
         });
